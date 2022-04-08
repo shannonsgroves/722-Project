@@ -1,7 +1,7 @@
 Save the PDDL output from the satellite generator into ../Metric-FF/sat-problem
 Save the PDDL output from the blocks world generator into ../Metric-FF/block_problem
 Go into Metric-FF and run ./ff -o sat-domain -f sat-problem to run the satellite problem
-Go into Metric-FF and run ./ff -o block_domain -f block_problem to run the satellite problem
+Go into Metric-FF and run ./ff -o block_domain -f block_problem to run the block problem
 
 Save the PDDL output from the satellite generator into ../pyhop/satellite problem and run python3 satellte_translator.py to run the satellite problem in pyhop
 Save the non-PDDL output from the blocksworld generator into ../pyhop/block_problem and run python3 blocks_translator.py to run the block problem in pyhop
