@@ -1,0 +1,58 @@
+(define (domain satellite)
+(:objects
+	satellite0 - satellite
+	instrument0 - instrument
+	instrument1 - instrument
+	instrument2 - instrument
+	thermograph4 - mode
+	infrared3 - mode
+	spectrograph0 - mode
+	spectrograph1 - mode
+	spectrograph2 - mode
+	Star0 - direction
+	Star1 - direction
+	Planet2 - direction
+)
+(:init
+	(supports instrument0 infrared3)
+	(supports instrument0 thermograph4)
+	(calibration_target instrument0 Star0)
+	(supports instrument1 spectrograph2)
+	(supports instrument1 spectrograph1)
+	(supports instrument1 spectrograph0)
+	(calibration_target instrument1 Star0)
+	(supports instrument2 spectrograph2)
+	(calibration_target instrument2 Star0)
+	(on_board instrument0 satellite0)
+	(on_board instrument1 satellite0)
+	(on_board instrument2 satellite0)
+	(power_avail satellite0)
+	(pointing satellite0 Planet2)
+	(= (data_capacity satellite0) 1000)
+	(= (fuel satellite0) 196)
+	(= (data Star1 thermograph4) 81)
+	(= (data Planet2 thermograph4) 161)
+	(= (data Star1 infrared3) 16)
+	(= (data Planet2 infrared3) 100)
+	(= (data Star1 spectrograph0) 294)
+	(= (data Planet2 spectrograph0) 65)
+	(= (data Star1 spectrograph1) 294)
+	(= (data Planet2 spectrograph1) 4)
+	(= (data Star1 spectrograph2) 263)
+	(= (data Planet2 spectrograph2) 261)
+	(= (slew_time Star1 Star0) 16.25)
+	(= (slew_time Star0 Star1) 16.25)
+	(= (slew_time Planet2 Star0) 78.86)
+	(= (slew_time Star0 Planet2) 78.86)
+	(= (slew_time Planet2 Star1) 10.09)
+	(= (slew_time Star1 Planet2) 10.09)
+	(= (data-stored) 0)
+	(= (fuel-used) 0)
+)
+(:goal (and
+	(pointing satellite0 Star0)
+	(have_image Star1 spectrograph0)
+))
+(:metric minimize (fuel-used))
+
+)
